@@ -11,6 +11,7 @@
 #import <ContactsUI/CNContactPickerViewController.h>
 #import <ContactsUI/ContactsUI.h>
 
+// 这个类用来做iOS9的操作
 @interface ViewController ()<CNContactPickerDelegate>
 
 @end
@@ -133,5 +134,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end
