@@ -12,7 +12,7 @@
 @interface SXAddressBookIOS7Maneger : NSObject
 
 + (SXAddressBookIOS7Maneger *)manager;
-- (void)presentPageOnTarget:(id)target chooseAction:(void (^)(NSDictionary *dict))action;
+- (void)presentPageOnTarget:(id)target chooseAction:(SXAddressBookChooseAction)action;
 - (void)askUserWithSuccess:(void (^)())success failure:(void (^)())failure;
 - (SXAddressBookAuthStatus)getAuthStatus;
 - (NSArray *)getPersonInfoArray;

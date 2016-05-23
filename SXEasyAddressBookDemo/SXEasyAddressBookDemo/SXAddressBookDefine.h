@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SXPersonInfoEntity.h"
 
 #define IOS7_OR_EARLY_SX   ( [[[UIDevice currentDevice] systemVersion] compare:@"8.0"] == NSOrderedAscending )
 #define IOS9_OR_LATER_SX   ( [[[UIDevice currentDevice] systemVersion] compare:@"9.0"] != NSOrderedAscending )
@@ -19,6 +20,8 @@ typedef NS_ENUM(NSUInteger, SXAddressBookAuthStatus) {
     kSXAddressBookAuthStatusDenied,
     kSXAddressBookAuthStatusAuthorized
 };
+
+typedef void(^SXAddressBookChooseAction)(SXPersonInfoEntity *person);
 
 @interface SXAddressBookDefine : NSObject
 

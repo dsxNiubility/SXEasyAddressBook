@@ -7,6 +7,13 @@
 //
 
 #import "SXAddressBookIOS8Maneger.h"
+#import <AddressBookUI/AddressBookUI.h>
+
+@interface SXAddressBookIOS8Maneger ()<ABPeoplePickerNavigationControllerDelegate>
+
+@property(nonatomic,copy) SXAddressBookChooseAction chooseAction;
+
+@end
 
 @implementation SXAddressBookIOS8Maneger
 
@@ -22,7 +29,7 @@
     return sharedInstance;
 }
 
-- (void)presentPageOnTarget:(id)target chooseAction:(void (^)(NSDictionary *dict))action{
+- (void)presentPageOnTarget:(id)target chooseAction:(SXAddressBookChooseAction)action{
     
 }
 
