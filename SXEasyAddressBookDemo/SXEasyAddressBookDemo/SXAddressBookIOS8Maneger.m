@@ -22,4 +22,23 @@
     return sharedInstance;
 }
 
+- (void)presentPageOnTarget:(id)target chooseAction:(void (^)(NSDictionary *dict))action{
+    
+}
+
+- (void)askUserWithSuccess:(void (^)())success failure:(void (^)())failure
+{
+    
+}
+
+- (SXAddressBookAuthStatus)getAuthStatus
+{
+    return 0;
+}
+
+- (NSArray *)getPersonInfoArray
+{
+    return nil;
+}
+
 @end

@@ -7,9 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SXAddressBookDefine.h"
 
 @interface SXAddressBookIOS7Maneger : NSObject
 
 + (SXAddressBookIOS7Maneger *)manager;
+- (void)presentPageOnTarget:(id)target chooseAction:(void (^)(NSDictionary *dict))action;
+- (void)askUserWithSuccess:(void (^)())success failure:(void (^)())failure;
+- (SXAddressBookAuthStatus)getAuthStatus;
+- (NSArray *)getPersonInfoArray;
 
 @end

@@ -25,4 +25,43 @@
     return sharedInstance;
 }
 
+- (void)presentPageOnTarget:(id)target chooseAction:(void (^)(NSDictionary *dict))action{
+    if (IOS7_OR_EARLY_SX) {
+        [[SXAddressBookIOS7Maneger manager] presentPageOnTarget:target chooseAction:action];
+    }else if (IOS9_OR_LATER_SX){
+        [[SXAddressBookIOS9Maneger manager] presentPageOnTarget:target chooseAction:action];
+    }else{
+        [[SXAddressBookIOS8Maneger manager] presentPageOnTarget:target chooseAction:action];
+    }
+}
+
+- (void)askUserWithSuccess:(void (^)())success failure:(void (^)())failure
+{
+    if (IOS7_OR_EARLY_SX) {
+        [[SXAddressBookIOS7Maneger manager] askUserWithSuccess:success failure:failure];
+    }else if (IOS9_OR_LATER_SX){
+        [[SXAddressBookIOS9Maneger manager] askUserWithSuccess:success failure:failure];
+    }else{
+        [[SXAddressBookIOS8Maneger manager]  askUserWithSuccess:success failure:failure];
+    }
+}
+
+- (SXAddressBookAuthStatus)getAuthStatus
+{
+    SXAddressBookAuthStatus status;
+    if (IOS7_OR_EARLY_SX) {
+        status = [[SXAddressBookIOS7Maneger manager] getAuthStatus];
+    }else if (IOS9_OR_LATER_SX){
+        status = [[SXAddressBookIOS9Maneger manager] getAuthStatus];
+    }else{
+        status = [[SXAddressBookIOS8Maneger manager] getAuthStatus];
+    }
+    return status;
+}
+
+- (NSArray *)getPersonInfoArray
+{
+    return nil;
+}
+
 @end
