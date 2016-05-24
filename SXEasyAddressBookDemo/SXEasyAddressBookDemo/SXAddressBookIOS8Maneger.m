@@ -86,15 +86,9 @@
         personEntity.lastname = lastName;
         personEntity.firstname = firstName;
         
-        if ((lastName.length > 1) && (firstName.length > 1)) {
-            personEntity.fullname = [firstName stringByAppendingString:lastName];
-        }else if ((lastName.length > 1) && (firstName.length < 1)){
-            personEntity.fullname = lastName;
-        }else if ((lastName.length < 1) && (firstName.length > 1)){
-            personEntity.fullname = firstName;
-        }else{
-            personEntity.fullname = @"noName";
-        }
+        NSMutableString *fullname = [[NSString stringWithFormat:@"%@%@",lastName,firstName] mutableCopy];
+        [fullname replaceOccurrencesOfString:@"(null)" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, fullname.length)];
+        personEntity.fullname = fullname;
         
         ABMultiValueRef phones = ABRecordCopyValue(person, kABPersonPhoneProperty);
         CFIndex phoneCount = ABMultiValueGetCount(phones);
@@ -175,15 +169,9 @@
     personEntity.lastname = lastname;
     personEntity.firstname = firstname;
     
-    if ((lastname.length > 1) && (firstname.length > 1)) {
-        personEntity.fullname = [firstname stringByAppendingString:lastname];
-    }else if ((lastname.length > 1) && (firstname.length < 1)){
-        personEntity.fullname = lastname;
-    }else if ((lastname.length < 1) && (firstname.length > 1)){
-        personEntity.fullname = firstname;
-    }else{
-        personEntity.fullname = @"noName";
-    }
+    NSMutableString *fullname = [[NSString stringWithFormat:@"%@%@",lastname,firstname] mutableCopy];
+    [fullname replaceOccurrencesOfString:@"(null)" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, fullname.length)];
+    personEntity.fullname = fullname;
     
     personEntity.phoneNumber = phoneNO;
     self.chooseAction(personEntity);
