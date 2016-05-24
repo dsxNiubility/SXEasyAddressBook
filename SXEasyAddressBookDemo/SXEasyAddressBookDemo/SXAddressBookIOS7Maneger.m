@@ -46,7 +46,6 @@
             failure();
         }
     });
-
 }
 
 - (SXAddressBookAuthStatus)getAuthStatus
@@ -73,7 +72,53 @@
 
 - (NSArray *)getPersonInfoArray
 {
-    return nil;
+    ABAddressBookRef addressBook = ABAddressBookCreate();
+    CFArrayRef peopleArray = ABAddressBookCopyArrayOfAllPeople(addressBook);
+    CFIndex peopleCount = CFArrayGetCount(peopleArray);
+    
+    NSMutableArray *personArray = [NSMutableArray array];
+    for (int i = 0; i < peopleCount; i++) {
+        
+        SXPersonInfoEntity *personEntity = [SXPersonInfoEntity new];
+        
+        ABRecordRef person = CFArrayGetValueAtIndex(peopleArray, i);
+        NSString *lastName = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
+        NSString *firstName = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
+        NSLog(@"%@ %@", lastName, firstName);
+        personEntity.lastname = lastName;
+        personEntity.firstname = firstName;
+        
+        if ((lastName.length > 1) && (firstName.length > 1)) {
+            personEntity.fullname = [firstName stringByAppendingString:lastName];
+        }else if ((lastName.length > 1) && (firstName.length < 1)){
+            personEntity.fullname = lastName;
+        }else if ((lastName.length < 1) && (firstName.length > 1)){
+            personEntity.fullname = firstName;
+        }else{
+            personEntity.fullname = @"noName";
+        }
+        
+        
+        ABMultiValueRef phones = ABRecordCopyValue(person, kABPersonPhoneProperty);
+        CFIndex phoneCount = ABMultiValueGetCount(phones);
+        
+        NSString *fullPhoneStr = [NSString string];
+        for (int i = 0; i < phoneCount; i++) {
+            NSString *phoneLabel = (__bridge_transfer NSString *)ABMultiValueCopyLabelAtIndex(phones, i);
+            NSString *phoneValue = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
+            NSLog(@"%@ %@", phoneLabel, phoneValue);
+            fullPhoneStr = [fullPhoneStr stringByAppendingString:phoneValue];
+            fullPhoneStr = [fullPhoneStr stringByAppendingString:@","];
+        }
+        if (fullPhoneStr.length > 1) {
+            personEntity.phoneNumber = [fullPhoneStr substringToIndex:fullPhoneStr.length - 1];
+        }
+        [personArray addObject:personEntity];
+        CFRelease(phones);
+    }
+    CFRelease(addressBook);
+    CFRelease(peopleArray);
+    return personArray;
 }
 
 
@@ -100,6 +145,17 @@
     SXPersonInfoEntity *personEntity = [SXPersonInfoEntity new];
     personEntity.lastname = lastname;
     personEntity.firstname = firstname;
+    
+    if ((lastname.length > 1) && (firstname.length > 1)) {
+        personEntity.fullname = [firstname stringByAppendingString:lastname];
+    }else if ((lastname.length > 1) && (firstname.length < 1)){
+        personEntity.fullname = lastname;
+    }else if ((lastname.length < 1) && (firstname.length > 1)){
+        personEntity.fullname = firstname;
+    }else{
+        personEntity.fullname = @"noName";
+    }
+    
     personEntity.phoneNumber = phoneNO;
     self.chooseAction(personEntity);
     

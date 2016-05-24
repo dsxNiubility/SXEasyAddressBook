@@ -25,7 +25,7 @@
     return sharedInstance;
 }
 
-- (void)presentPageOnTarget:(id)target chooseAction:(void (^)(NSDictionary *dict))action{
+- (void)presentPageOnTarget:(id)target chooseAction:(SXAddressBookChooseAction)action{
     if (IOS7_OR_EARLY_SX) {
         [[SXAddressBookIOS7Maneger manager] presentPageOnTarget:target chooseAction:action];
     }else if (IOS9_OR_LATER_SX){
@@ -61,7 +61,13 @@
 
 - (NSArray *)getPersonInfoArray
 {
-    return nil;
+    if (IOS7_OR_EARLY_SX) {
+        return [[SXAddressBookIOS7Maneger manager] getPersonInfoArray];
+    }else if (IOS9_OR_LATER_SX){
+        return [[SXAddressBookIOS9Maneger manager] getPersonInfoArray];
+    }else{
+        return [[SXAddressBookIOS8Maneger manager] getPersonInfoArray];
+    }
 }
 
 @end
