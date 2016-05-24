@@ -7,8 +7,8 @@
 //
 
 #import "ViewController.h"
-#import <ContactsUI/CNContactViewController.h>
-#import <ContactsUI/CNContactPickerViewController.h>
+//#import <ContactsUI/CNContactViewController.h>
+//#import <ContactsUI/CNContactPickerViewController.h>
 #import <ContactsUI/ContactsUI.h>
 
 // 这个类用来做iOS9的操作
@@ -128,11 +128,6 @@
 - (void)contactPickerDidCancel:(CNContactPickerViewController *)picker
 {
     NSLog(@"点击取消后的代码");
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

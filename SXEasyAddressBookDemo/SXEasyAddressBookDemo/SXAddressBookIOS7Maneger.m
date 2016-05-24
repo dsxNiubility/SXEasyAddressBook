@@ -67,7 +67,6 @@
         NSLog(@"没有授权");
         return kSXAddressBookAuthStatusDenied;
     }
-    
 }
 
 - (NSArray *)getPersonInfoArray
@@ -107,8 +106,10 @@
             NSString *phoneLabel = (__bridge_transfer NSString *)ABMultiValueCopyLabelAtIndex(phones, i);
             NSString *phoneValue = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
             NSLog(@"%@ %@", phoneLabel, phoneValue);
-            fullPhoneStr = [fullPhoneStr stringByAppendingString:phoneValue];
-            fullPhoneStr = [fullPhoneStr stringByAppendingString:@","];
+            if (phoneValue.length > 0) {
+                fullPhoneStr = [fullPhoneStr stringByAppendingString:phoneValue];
+                fullPhoneStr = [fullPhoneStr stringByAppendingString:@","];
+            }
         }
         if (fullPhoneStr.length > 1) {
             personEntity.phoneNumber = [fullPhoneStr substringToIndex:fullPhoneStr.length - 1];
