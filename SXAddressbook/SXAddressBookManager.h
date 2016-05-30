@@ -16,6 +16,7 @@
 - (SXAddressBookAuthStatus)getAuthStatus;
 - (NSArray *)getPersonInfoArray;
 
+- (void)creatItemWithName:(NSString *)name phone:(NSString *)phone;
 /**
  *  检查有无权限后直接执行代码
  *

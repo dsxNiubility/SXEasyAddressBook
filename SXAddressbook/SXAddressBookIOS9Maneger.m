@@ -154,4 +154,22 @@
     NSLog(@"点击取消后的代码");
 }
 
+- (void)creatItemWithName:(NSString *)name phone:(NSString *)phone
+{
+    // 创建对象
+    // 这个里面可以添加多个电话，email，地址等等。 感觉使用率不高，只提供了最常用的属性：姓名+电话，需要时可以自行扩展。
+    CNMutableContact * contact = [[CNMutableContact alloc]init];
+    contact.givenName = name?:@"defaultname";
+    CNLabeledValue *phoneNumber = [CNLabeledValue labeledValueWithLabel:CNLabelPhoneNumberMobile value:[CNPhoneNumber phoneNumberWithStringValue:phone?:@"10086"]];
+    contact.phoneNumbers = @[phoneNumber];
+    
+    // 把对象加到请求中
+    CNSaveRequest * saveRequest = [[CNSaveRequest alloc]init];
+    [saveRequest addContact:contact toContainerWithIdentifier:nil];
+    
+    // 执行请求
+    CNContactStore * store = [[CNContactStore alloc]init];
+    [store executeSaveRequest:saveRequest error:nil];
+}
+
 @end

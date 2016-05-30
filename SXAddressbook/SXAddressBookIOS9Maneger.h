@@ -16,5 +16,6 @@
 - (void)askUserWithSuccess:(void (^)())success failure:(void (^)())failure;
 - (SXAddressBookAuthStatus)getAuthStatus;
 - (NSArray *)getPersonInfoArray;
+- (void)creatItemWithName:(NSString *)name phone:(NSString *)phone;
 
 @end

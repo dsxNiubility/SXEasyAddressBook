@@ -50,6 +50,17 @@
     }
 }
 
+- (void)creatItemWithName:(NSString *)name phone:(NSString *)phone
+{
+    if (IOS7_OR_EARLY_SX) {
+        [[SXAddressBookIOS7Maneger manager] creatItemWithName:name phone:phone];
+    }else if (IOS9_OR_LATER_SX){
+        [[SXAddressBookIOS9Maneger manager] creatItemWithName:name phone:phone];
+    }else{
+        [[SXAddressBookIOS8Maneger manager] creatItemWithName:name phone:phone];
+    }
+}
+
 - (void)askUserWithSuccess:(void (^)())success failure:(void (^)())failure
 {
     if (IOS7_OR_EARLY_SX) {

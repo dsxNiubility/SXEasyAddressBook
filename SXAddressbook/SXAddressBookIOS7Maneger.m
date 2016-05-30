@@ -155,5 +155,30 @@
     return YES;
 }
 
+- (void)creatItemWithName:(NSString *)name phone:(NSString *)phone
+{
+    if((name.length < 1)||(phone.length < 1)){
+        NSLog(@"输入属性不能为空");
+        return;
+    }
+    CFErrorRef error = NULL;
+    
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, &error);
+    ABRecordRef newRecord = ABPersonCreate();
+    ABRecordSetValue(newRecord, kABPersonFirstNameProperty, (__bridge CFTypeRef)name, &error);
+    
+    ABMutableMultiValueRef multi = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+    ABMultiValueAddValueAndLabel(multi, (__bridge CFTypeRef)name, kABPersonPhoneMobileLabel, NULL);
+    
+    ABRecordSetValue(newRecord, kABPersonPhoneProperty, multi, &error);
+    CFRelease(multi);
+    
+    ABAddressBookAddRecord(addressBook, newRecord, &error);
+    
+    ABAddressBookSave(addressBook, &error);
+    CFRelease(newRecord);
+    CFRelease(addressBook);
+}
+
 
 @end
