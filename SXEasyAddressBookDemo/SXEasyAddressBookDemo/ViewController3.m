@@ -21,8 +21,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    [self checkStatus];
     
+//    [self checkStatus1];
+    [self checkStatus2];
+
+}
+
+- (void)checkStatus1
+{
     SXAddressBookAuthStatus status = [[SXAddressBookManager manager]getAuthStatus];
     if (status == kSXAddressBookAuthStatusNotDetermined) {
         [[SXAddressBookManager manager]askUserWithSuccess:^{
@@ -35,6 +41,16 @@
     }else{
         NSLog(@"没有权限");
     }
+}
+
+
+- (void)checkStatus2
+{
+    [[SXAddressBookManager manager]checkStatusAndDoSomethingSuccess:^{
+        NSLog(@"已经有权限，做相关操作，可以做读取通讯录等操作");
+    } failure:^{
+        NSLog(@"未得到权限，做相关操作，可以做弹窗询问等操作");
+    }];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event

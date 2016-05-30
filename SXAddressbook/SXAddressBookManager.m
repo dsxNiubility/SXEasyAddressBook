@@ -35,6 +35,21 @@
     }
 }
 
+- (void)checkStatusAndDoSomethingSuccess:(void (^)())success failure:(void (^)())failure{
+    SXAddressBookAuthStatus status = [[SXAddressBookManager manager]getAuthStatus];
+    if (status == kSXAddressBookAuthStatusNotDetermined) {
+        [[SXAddressBookManager manager]askUserWithSuccess:^{
+            success();
+        } failure:^{
+            failure();
+        }];
+    }else if (status == kSXAddressBookAuthStatusAuthorized){
+        success();
+    }else{
+        failure();
+    }
+}
+
 - (void)askUserWithSuccess:(void (^)())success failure:(void (^)())failure
 {
     if (IOS7_OR_EARLY_SX) {

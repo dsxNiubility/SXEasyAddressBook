@@ -16,4 +16,12 @@
 - (SXAddressBookAuthStatus)getAuthStatus;
 - (NSArray *)getPersonInfoArray;
 
+/**
+ *  检查有无权限后直接执行代码
+ *
+ *  @param success 有权限操作
+ *  @param failure 无权限操作
+ */
+- (void)checkStatusAndDoSomethingSuccess:(void (^)())success failure:(void (^)())failure;
+
 @end
