@@ -6,18 +6,17 @@
 //  Copyright © 2016年 Sankuai. All rights reserved.
 //
 
-// 这个类用来做iOS7的操作
-#import "ViewController3.h"
-#import <AddressBookUI/AddressBookUI.h>
+// 这个类用来做所有版本的操作
+#import "SXFinalDemoPage.h"
 #import "SXAddressBookManager.h"
 
-@interface ViewController3 ()<ABPeoplePickerNavigationControllerDelegate>
+@interface SXFinalDemoPage ()
 
 @property(nonatomic,strong)NSArray<SXPersonInfoEntity *>*personEntityArray;
 
 @end
 
-@implementation ViewController3
+@implementation SXFinalDemoPage
 
 - (void)viewDidLoad {
     [super viewDidLoad];

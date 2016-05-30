@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1DDCB1061CEDDF8E002E137E /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB1051CEDDF8E002E137E /* ViewController2.m */; };
-		1DDCB1091CEDDF9A002E137E /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB1081CEDDF9A002E137E /* ViewController3.m */; };
+		1DDCB1091CEDDF9A002E137E /* SXFinalDemoPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB1081CEDDF9A002E137E /* SXFinalDemoPage.m */; };
 		1DDCB2661CFBE7DD002E137E /* SXAddressBookDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB25B1CFBE7DD002E137E /* SXAddressBookDefine.m */; };
 		1DDCB2671CFBE7DD002E137E /* SXAddressBookIOS7Maneger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB25D1CFBE7DD002E137E /* SXAddressBookIOS7Maneger.m */; };
 		1DDCB2681CFBE7DD002E137E /* SXAddressBookIOS8Maneger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB25F1CFBE7DD002E137E /* SXAddressBookIOS8Maneger.m */; };
@@ -26,8 +26,8 @@
 /* Begin PBXFileReference section */
 		1DDCB1041CEDDF8E002E137E /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		1DDCB1051CEDDF8E002E137E /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
-		1DDCB1071CEDDF9A002E137E /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
-		1DDCB1081CEDDF9A002E137E /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		1DDCB1071CEDDF9A002E137E /* SXFinalDemoPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXFinalDemoPage.h; sourceTree = "<group>"; };
+		1DDCB1081CEDDF9A002E137E /* SXFinalDemoPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXFinalDemoPage.m; sourceTree = "<group>"; };
 		1DDCB25A1CFBE7DD002E137E /* SXAddressBookDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookDefine.h; sourceTree = "<group>"; };
 		1DDCB25B1CFBE7DD002E137E /* SXAddressBookDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookDefine.m; sourceTree = "<group>"; };
 		1DDCB25C1CFBE7DD002E137E /* SXAddressBookIOS7Maneger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookIOS7Maneger.h; sourceTree = "<group>"; };
@@ -83,6 +83,22 @@
 			path = ../../SXAddressbook;
 			sourceTree = "<group>";
 		};
+		1DDCB26C1CFC3DFF002E137E /* ignore */ = {
+			isa = PBXGroup;
+			children = (
+				1DFFC16C1CEDC80A00ECBC29 /* Assets.xcassets */,
+				1DFFC16E1CEDC80A00ECBC29 /* LaunchScreen.storyboard */,
+				1DFFC1711CEDC80A00ECBC29 /* Info.plist */,
+				1DFFC1631CEDC80A00ECBC29 /* AppDelegate.h */,
+				1DFFC1641CEDC80A00ECBC29 /* AppDelegate.m */,
+				1DFFC1661CEDC80A00ECBC29 /* ViewController.h */,
+				1DFFC1671CEDC80A00ECBC29 /* ViewController.m */,
+				1DDCB1041CEDDF8E002E137E /* ViewController2.h */,
+				1DDCB1051CEDDF8E002E137E /* ViewController2.m */,
+			);
+			name = ignore;
+			sourceTree = "<group>";
+		};
 		1DFFC1541CEDC80A00ECBC29 = {
 			isa = PBXGroup;
 			children = (
@@ -102,19 +118,11 @@
 		1DFFC15F1CEDC80A00ECBC29 /* SXEasyAddressBookDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1DDCB26C1CFC3DFF002E137E /* ignore */,
 				1DDCB2591CFBE7DD002E137E /* SXAddressbook */,
-				1DFFC1631CEDC80A00ECBC29 /* AppDelegate.h */,
-				1DFFC1641CEDC80A00ECBC29 /* AppDelegate.m */,
-				1DFFC1661CEDC80A00ECBC29 /* ViewController.h */,
-				1DFFC1671CEDC80A00ECBC29 /* ViewController.m */,
-				1DDCB1041CEDDF8E002E137E /* ViewController2.h */,
-				1DDCB1051CEDDF8E002E137E /* ViewController2.m */,
-				1DDCB1071CEDDF9A002E137E /* ViewController3.h */,
-				1DDCB1081CEDDF9A002E137E /* ViewController3.m */,
+				1DDCB1071CEDDF9A002E137E /* SXFinalDemoPage.h */,
+				1DDCB1081CEDDF9A002E137E /* SXFinalDemoPage.m */,
 				1DFFC1691CEDC80A00ECBC29 /* Main.storyboard */,
-				1DFFC16C1CEDC80A00ECBC29 /* Assets.xcassets */,
-				1DFFC16E1CEDC80A00ECBC29 /* LaunchScreen.storyboard */,
-				1DFFC1711CEDC80A00ECBC29 /* Info.plist */,
 				1DFFC1601CEDC80A00ECBC29 /* Supporting Files */,
 			);
 			path = SXEasyAddressBookDemo;
@@ -208,7 +216,7 @@
 				1DDCB2661CFBE7DD002E137E /* SXAddressBookDefine.m in Sources */,
 				1DFFC1621CEDC80A00ECBC29 /* main.m in Sources */,
 				1DDCB26A1CFBE7DD002E137E /* SXAddressBookManager.m in Sources */,
-				1DDCB1091CEDDF9A002E137E /* ViewController3.m in Sources */,
+				1DDCB1091CEDDF9A002E137E /* SXFinalDemoPage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

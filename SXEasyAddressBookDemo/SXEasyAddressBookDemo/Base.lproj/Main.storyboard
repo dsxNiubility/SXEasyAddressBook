@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DhW-rG-07b">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
@@ -43,10 +42,10 @@
             </objects>
             <point key="canvasLocation" x="231" y="-1"/>
         </scene>
-        <!--View Controller3-->
+        <!--Final Demo Page-->
         <scene sceneID="yBj-I0-nuT">
             <objects>
-                <viewController id="DhW-rG-07b" customClass="ViewController3" sceneMemberID="viewController">
+                <viewController id="DhW-rG-07b" customClass="SXFinalDemoPage" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xUb-vU-Rfu"/>
                         <viewControllerLayoutGuide type="bottom" id="SAf-lU-8ny"/>
