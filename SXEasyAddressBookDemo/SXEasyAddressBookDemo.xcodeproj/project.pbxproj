@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		1DDCB1061CEDDF8E002E137E /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB1051CEDDF8E002E137E /* ViewController2.m */; };
 		1DDCB1091CEDDF9A002E137E /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB1081CEDDF9A002E137E /* ViewController3.m */; };
-		1DDCB1511CF30690002E137E /* SXAddressBookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB1501CF30690002E137E /* SXAddressBookManager.m */; };
-		1DDCB1541CF306D7002E137E /* SXAddressBookIOS7Maneger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB1531CF306D7002E137E /* SXAddressBookIOS7Maneger.m */; };
-		1DDCB1571CF306E3002E137E /* SXAddressBookIOS8Maneger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB1561CF306E3002E137E /* SXAddressBookIOS8Maneger.m */; };
-		1DDCB15A1CF306EF002E137E /* SXAddressBookIOS9Maneger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB1591CF306EF002E137E /* SXAddressBookIOS9Maneger.m */; };
-		1DDCB15D1CF31E98002E137E /* SXAddressBookDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB15C1CF31E98002E137E /* SXAddressBookDefine.m */; };
-		1DDCB1601CF3254C002E137E /* SXPersonInfoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB15F1CF3254C002E137E /* SXPersonInfoEntity.m */; };
+		1DDCB2661CFBE7DD002E137E /* SXAddressBookDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB25B1CFBE7DD002E137E /* SXAddressBookDefine.m */; };
+		1DDCB2671CFBE7DD002E137E /* SXAddressBookIOS7Maneger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB25D1CFBE7DD002E137E /* SXAddressBookIOS7Maneger.m */; };
+		1DDCB2681CFBE7DD002E137E /* SXAddressBookIOS8Maneger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB25F1CFBE7DD002E137E /* SXAddressBookIOS8Maneger.m */; };
+		1DDCB2691CFBE7DD002E137E /* SXAddressBookIOS9Maneger.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB2611CFBE7DD002E137E /* SXAddressBookIOS9Maneger.m */; };
+		1DDCB26A1CFBE7DD002E137E /* SXAddressBookManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB2631CFBE7DD002E137E /* SXAddressBookManager.m */; };
+		1DDCB26B1CFBE7DD002E137E /* SXPersonInfoEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DDCB2651CFBE7DD002E137E /* SXPersonInfoEntity.m */; };
 		1DFFC1621CEDC80A00ECBC29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFFC1611CEDC80A00ECBC29 /* main.m */; };
 		1DFFC1651CEDC80A00ECBC29 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFFC1641CEDC80A00ECBC29 /* AppDelegate.m */; };
 		1DFFC1681CEDC80A00ECBC29 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFFC1671CEDC80A00ECBC29 /* ViewController.m */; };
@@ -28,18 +28,18 @@
 		1DDCB1051CEDDF8E002E137E /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		1DDCB1071CEDDF9A002E137E /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		1DDCB1081CEDDF9A002E137E /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
-		1DDCB14F1CF30690002E137E /* SXAddressBookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookManager.h; sourceTree = "<group>"; };
-		1DDCB1501CF30690002E137E /* SXAddressBookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookManager.m; sourceTree = "<group>"; };
-		1DDCB1521CF306D7002E137E /* SXAddressBookIOS7Maneger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookIOS7Maneger.h; sourceTree = "<group>"; };
-		1DDCB1531CF306D7002E137E /* SXAddressBookIOS7Maneger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookIOS7Maneger.m; sourceTree = "<group>"; };
-		1DDCB1551CF306E3002E137E /* SXAddressBookIOS8Maneger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookIOS8Maneger.h; sourceTree = "<group>"; };
-		1DDCB1561CF306E3002E137E /* SXAddressBookIOS8Maneger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookIOS8Maneger.m; sourceTree = "<group>"; };
-		1DDCB1581CF306EF002E137E /* SXAddressBookIOS9Maneger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookIOS9Maneger.h; sourceTree = "<group>"; };
-		1DDCB1591CF306EF002E137E /* SXAddressBookIOS9Maneger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookIOS9Maneger.m; sourceTree = "<group>"; };
-		1DDCB15B1CF31E98002E137E /* SXAddressBookDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookDefine.h; sourceTree = "<group>"; };
-		1DDCB15C1CF31E98002E137E /* SXAddressBookDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookDefine.m; sourceTree = "<group>"; };
-		1DDCB15E1CF3254C002E137E /* SXPersonInfoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPersonInfoEntity.h; sourceTree = "<group>"; };
-		1DDCB15F1CF3254C002E137E /* SXPersonInfoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPersonInfoEntity.m; sourceTree = "<group>"; };
+		1DDCB25A1CFBE7DD002E137E /* SXAddressBookDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookDefine.h; sourceTree = "<group>"; };
+		1DDCB25B1CFBE7DD002E137E /* SXAddressBookDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookDefine.m; sourceTree = "<group>"; };
+		1DDCB25C1CFBE7DD002E137E /* SXAddressBookIOS7Maneger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookIOS7Maneger.h; sourceTree = "<group>"; };
+		1DDCB25D1CFBE7DD002E137E /* SXAddressBookIOS7Maneger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookIOS7Maneger.m; sourceTree = "<group>"; };
+		1DDCB25E1CFBE7DD002E137E /* SXAddressBookIOS8Maneger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookIOS8Maneger.h; sourceTree = "<group>"; };
+		1DDCB25F1CFBE7DD002E137E /* SXAddressBookIOS8Maneger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookIOS8Maneger.m; sourceTree = "<group>"; };
+		1DDCB2601CFBE7DD002E137E /* SXAddressBookIOS9Maneger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookIOS9Maneger.h; sourceTree = "<group>"; };
+		1DDCB2611CFBE7DD002E137E /* SXAddressBookIOS9Maneger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookIOS9Maneger.m; sourceTree = "<group>"; };
+		1DDCB2621CFBE7DD002E137E /* SXAddressBookManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXAddressBookManager.h; sourceTree = "<group>"; };
+		1DDCB2631CFBE7DD002E137E /* SXAddressBookManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXAddressBookManager.m; sourceTree = "<group>"; };
+		1DDCB2641CFBE7DD002E137E /* SXPersonInfoEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXPersonInfoEntity.h; sourceTree = "<group>"; };
+		1DDCB2651CFBE7DD002E137E /* SXPersonInfoEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXPersonInfoEntity.m; sourceTree = "<group>"; };
 		1DFFC15D1CEDC80A00ECBC29 /* SXEasyAddressBookDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SXEasyAddressBookDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DFFC1611CEDC80A00ECBC29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1DFFC1631CEDC80A00ECBC29 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -63,6 +63,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DDCB2591CFBE7DD002E137E /* SXAddressbook */ = {
+			isa = PBXGroup;
+			children = (
+				1DDCB25A1CFBE7DD002E137E /* SXAddressBookDefine.h */,
+				1DDCB25B1CFBE7DD002E137E /* SXAddressBookDefine.m */,
+				1DDCB25C1CFBE7DD002E137E /* SXAddressBookIOS7Maneger.h */,
+				1DDCB25D1CFBE7DD002E137E /* SXAddressBookIOS7Maneger.m */,
+				1DDCB25E1CFBE7DD002E137E /* SXAddressBookIOS8Maneger.h */,
+				1DDCB25F1CFBE7DD002E137E /* SXAddressBookIOS8Maneger.m */,
+				1DDCB2601CFBE7DD002E137E /* SXAddressBookIOS9Maneger.h */,
+				1DDCB2611CFBE7DD002E137E /* SXAddressBookIOS9Maneger.m */,
+				1DDCB2621CFBE7DD002E137E /* SXAddressBookManager.h */,
+				1DDCB2631CFBE7DD002E137E /* SXAddressBookManager.m */,
+				1DDCB2641CFBE7DD002E137E /* SXPersonInfoEntity.h */,
+				1DDCB2651CFBE7DD002E137E /* SXPersonInfoEntity.m */,
+			);
+			name = SXAddressbook;
+			path = ../../SXAddressbook;
+			sourceTree = "<group>";
+		};
 		1DFFC1541CEDC80A00ECBC29 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +102,7 @@
 		1DFFC15F1CEDC80A00ECBC29 /* SXEasyAddressBookDemo */ = {
 			isa = PBXGroup;
 			children = (
+				1DDCB2591CFBE7DD002E137E /* SXAddressbook */,
 				1DFFC1631CEDC80A00ECBC29 /* AppDelegate.h */,
 				1DFFC1641CEDC80A00ECBC29 /* AppDelegate.m */,
 				1DFFC1661CEDC80A00ECBC29 /* ViewController.h */,
@@ -90,18 +111,6 @@
 				1DDCB1051CEDDF8E002E137E /* ViewController2.m */,
 				1DDCB1071CEDDF9A002E137E /* ViewController3.h */,
 				1DDCB1081CEDDF9A002E137E /* ViewController3.m */,
-				1DDCB15B1CF31E98002E137E /* SXAddressBookDefine.h */,
-				1DDCB15C1CF31E98002E137E /* SXAddressBookDefine.m */,
-				1DDCB15E1CF3254C002E137E /* SXPersonInfoEntity.h */,
-				1DDCB15F1CF3254C002E137E /* SXPersonInfoEntity.m */,
-				1DDCB14F1CF30690002E137E /* SXAddressBookManager.h */,
-				1DDCB1501CF30690002E137E /* SXAddressBookManager.m */,
-				1DDCB1521CF306D7002E137E /* SXAddressBookIOS7Maneger.h */,
-				1DDCB1531CF306D7002E137E /* SXAddressBookIOS7Maneger.m */,
-				1DDCB1551CF306E3002E137E /* SXAddressBookIOS8Maneger.h */,
-				1DDCB1561CF306E3002E137E /* SXAddressBookIOS8Maneger.m */,
-				1DDCB1581CF306EF002E137E /* SXAddressBookIOS9Maneger.h */,
-				1DDCB1591CF306EF002E137E /* SXAddressBookIOS9Maneger.m */,
 				1DFFC1691CEDC80A00ECBC29 /* Main.storyboard */,
 				1DFFC16C1CEDC80A00ECBC29 /* Assets.xcassets */,
 				1DFFC16E1CEDC80A00ECBC29 /* LaunchScreen.storyboard */,
@@ -189,16 +198,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1DDCB15A1CF306EF002E137E /* SXAddressBookIOS9Maneger.m in Sources */,
-				1DDCB15D1CF31E98002E137E /* SXAddressBookDefine.m in Sources */,
+				1DDCB2691CFBE7DD002E137E /* SXAddressBookIOS9Maneger.m in Sources */,
 				1DFFC1681CEDC80A00ECBC29 /* ViewController.m in Sources */,
 				1DDCB1061CEDDF8E002E137E /* ViewController2.m in Sources */,
-				1DDCB1601CF3254C002E137E /* SXPersonInfoEntity.m in Sources */,
-				1DDCB1541CF306D7002E137E /* SXAddressBookIOS7Maneger.m in Sources */,
-				1DDCB1571CF306E3002E137E /* SXAddressBookIOS8Maneger.m in Sources */,
+				1DDCB2671CFBE7DD002E137E /* SXAddressBookIOS7Maneger.m in Sources */,
+				1DDCB26B1CFBE7DD002E137E /* SXPersonInfoEntity.m in Sources */,
+				1DDCB2681CFBE7DD002E137E /* SXAddressBookIOS8Maneger.m in Sources */,
 				1DFFC1651CEDC80A00ECBC29 /* AppDelegate.m in Sources */,
+				1DDCB2661CFBE7DD002E137E /* SXAddressBookDefine.m in Sources */,
 				1DFFC1621CEDC80A00ECBC29 /* main.m in Sources */,
-				1DDCB1511CF30690002E137E /* SXAddressBookManager.m in Sources */,
+				1DDCB26A1CFBE7DD002E137E /* SXAddressBookManager.m in Sources */,
 				1DDCB1091CEDDF9A002E137E /* ViewController3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
