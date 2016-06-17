@@ -122,6 +122,11 @@
     return YES;
 }
 
+- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker{
+    NSLog(@"点击了取消");
+    [peoplePicker dismissViewControllerAnimated:YES completion:nil];
+}
+
 - (BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
 {
     ABMultiValueRef phone = ABRecordCopyValue(person, kABPersonPhoneProperty);

@@ -48,6 +48,7 @@
     [[SXAddressBookManager manager]checkStatusAndDoSomethingSuccess:^{
         NSLog(@"已经有权限，做相关操作，可以做读取通讯录等操作");
         [[SXAddressBookManager manager]creatItemWithName:@"雷克萨斯-北京咨询电话" phone:@"010-88657869"];
+        self.personEntityArray = [[SXAddressBookManager manager]getPersonInfoArray];
     } failure:^{
         NSLog(@"未得到权限，做相关操作，可以做弹窗询问等操作");
     }];
