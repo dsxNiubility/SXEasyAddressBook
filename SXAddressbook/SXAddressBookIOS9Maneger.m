@@ -33,7 +33,7 @@
     self.chooseAction = action;
     CNContactPickerViewController *contactVc = [[CNContactPickerViewController alloc] init];
 //    这行代码打开就是可以点进详通讯录情页，但是无法监听具体点了哪个，所以设置默认做法。
-//    contactVc.predicateForSelectionOfContact = [NSPredicate predicateWithValue:false];
+    contactVc.predicateForSelectionOfContact = [NSPredicate predicateWithValue:false];
     contactVc.delegate = self;
     [target presentViewController:contactVc animated:YES completion:nil];
 }
@@ -143,10 +143,19 @@
 
 - (void)contactPicker:(CNContactPickerViewController *)picker didSelectContactProperty:(CNContactProperty *)contactProperty
 {
-//    NSLog(@"%@",contactProperty.contact.identifier);
-//    NSUInteger count = [[NSArray array]indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//    }];
-    NSLog(@"选中联系人属性");
+    [contactProperty.contact.phoneNumbers indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        CNLabeledValue *phoneObj = (CNLabeledValue *)obj;
+        if([contactProperty.identifier isEqualToString:phoneObj.identifier]){
+            
+            CNPhoneNumber *phoneNumer = phoneObj.value;
+            NSString *phoneValue = phoneNumer.stringValue;
+            NSLog(@"选中联系人属性 %@",phoneValue);
+            return true;
+        }else{
+            return false;
+        }
+    }];
 }
 
 - (void)contactPickerDidCancel:(CNContactPickerViewController *)picker
