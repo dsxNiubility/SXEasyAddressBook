@@ -32,7 +32,7 @@
 - (void)presentPageOnTarget:(id)target chooseAction:(SXAddressBookChooseAction)action{
     self.chooseAction = action;
     CNContactPickerViewController *contactVc = [[CNContactPickerViewController alloc] init];
-//    这行代码打开就是可以点进详通讯录情页，但是无法监听具体点了哪个，所以设置默认做法。
+//    这行代码false就是可以点进详通讯录情页，true就是点击列表页就返回
     contactVc.predicateForSelectionOfContact = [NSPredicate predicateWithValue:false];
     contactVc.delegate = self;
     [target presentViewController:contactVc animated:YES completion:nil];
@@ -77,7 +77,6 @@
         SXPersonInfoEntity *personEntity = [SXPersonInfoEntity new];
         NSString *lastname = contact.familyName;
         NSString *firstname = contact.givenName;
-        NSLog(@"%@ %@", lastname, firstname);
         personEntity.lastname = lastname;
         personEntity.firstname = firstname;
         
@@ -88,12 +87,8 @@
         NSArray *phoneNums = contact.phoneNumbers;
         NSString *fullPhoneStr = [NSString string];
         for (CNLabeledValue *labeledValue in phoneNums) {
-
-            NSString *phoneLabel = labeledValue.label;
             CNPhoneNumber *phoneNumer = labeledValue.value;
             NSString *phoneValue = phoneNumer.stringValue;
-            
-            NSLog(@"%@ %@", phoneLabel, phoneValue);
             if (phoneValue.length > 0) {
                 fullPhoneStr = [fullPhoneStr stringByAppendingString:phoneValue];
                 fullPhoneStr = [fullPhoneStr stringByAppendingString:@","];
@@ -107,6 +102,9 @@
     return personArray;
 }
 
+/**
+ *  这个方法是点击列表缩回就回调的方法，现在不会调用了
+ */
 - (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact
 {
     SXPersonInfoEntity *personEntity = [SXPersonInfoEntity new];
@@ -123,13 +121,8 @@
     NSString *fullPhoneStr = [NSString string];
     NSArray *phoneNums = contact.phoneNumbers;
     for (CNLabeledValue *labeledValue in phoneNums) {
-        
-        NSString *phoneLabel = labeledValue.label;
-        
         CNPhoneNumber *phoneNumer = labeledValue.value;
         NSString *phoneValue = phoneNumer.stringValue;
-        
-        NSLog(@"%@ %@", phoneLabel, phoneValue);
         if (phoneValue.length > 0) {
             fullPhoneStr = [fullPhoneStr stringByAppendingString:phoneValue];
             fullPhoneStr = [fullPhoneStr stringByAppendingString:@","];
@@ -141,8 +134,12 @@
     self.chooseAction(personEntity);
 }
 
+/**
+ *  这个是点击详情页里面的一个字段才回调的方法
+ */
 - (void)contactPicker:(CNContactPickerViewController *)picker didSelectContactProperty:(CNContactProperty *)contactProperty
 {
+    NSLog(@"选中用户 %@ %@",contactProperty.contact.givenName,contactProperty.contact.familyName);
     [contactProperty.contact.phoneNumbers indexOfObjectPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         
         CNLabeledValue *phoneObj = (CNLabeledValue *)obj;
