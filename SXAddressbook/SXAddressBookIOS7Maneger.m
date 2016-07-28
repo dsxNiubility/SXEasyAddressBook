@@ -50,10 +50,7 @@
 
 - (SXAddressBookAuthStatus)getAuthStatus
 {
-    // 1.获取授权状态
     ABAuthorizationStatus status = ABAddressBookGetAuthorizationStatus();
-    
-
     if (status == kABAuthorizationStatusNotDetermined) {
         NSLog(@"还没问呢");
         return kSXAddressBookAuthStatusNotDetermined;
@@ -83,7 +80,6 @@
         ABRecordRef person = CFArrayGetValueAtIndex(peopleArray, i);
         NSString *lastName = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
         NSString *firstName = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
-        NSLog(@"%@ %@", lastName, firstName);
         personEntity.lastname = lastName;
         personEntity.firstname = firstName;
         
@@ -91,15 +87,12 @@
         [fullname replaceOccurrencesOfString:@"(null)" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, fullname.length)];
         personEntity.fullname = fullname;
         
-        
         ABMultiValueRef phones = ABRecordCopyValue(person, kABPersonPhoneProperty);
         CFIndex phoneCount = ABMultiValueGetCount(phones);
         
         NSString *fullPhoneStr = [NSString string];
         for (int i = 0; i < phoneCount; i++) {
-            NSString *phoneLabel = (__bridge_transfer NSString *)ABMultiValueCopyLabelAtIndex(phones, i);
             NSString *phoneValue = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
-            NSLog(@"%@ %@", phoneLabel, phoneValue);
             if (phoneValue.length > 0) {
                 fullPhoneStr = [fullPhoneStr stringByAppendingString:phoneValue];
                 fullPhoneStr = [fullPhoneStr stringByAppendingString:@","];

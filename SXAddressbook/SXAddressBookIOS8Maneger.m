@@ -82,7 +82,6 @@
         ABRecordRef person = CFArrayGetValueAtIndex(peopleArray, i);
         NSString *lastName = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonLastNameProperty);
         NSString *firstName = (__bridge_transfer NSString *)ABRecordCopyValue(person, kABPersonFirstNameProperty);
-        NSLog(@"%@ %@", lastName, firstName);
         personEntity.lastname = lastName;
         personEntity.firstname = firstName;
         
@@ -95,9 +94,7 @@
         
         NSString *fullPhoneStr = [NSString string];
         for (int i = 0; i < phoneCount; i++) {
-            NSString *phoneLabel = (__bridge_transfer NSString *)ABMultiValueCopyLabelAtIndex(phones, i);
             NSString *phoneValue = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
-            NSLog(@"%@ %@", phoneLabel, phoneValue);
             if (phoneValue.length > 0) {
                 fullPhoneStr = [fullPhoneStr stringByAppendingString:phoneValue];
                 fullPhoneStr = [fullPhoneStr stringByAppendingString:@","];
@@ -114,10 +111,12 @@
     return personArray;
 }
 
-// 当用户选中某一个联系人时会执行该方法,并且选中联系人后会直接退出控制器
+/**
+ *  当用户选中某一个联系人时会执行该方法,并且选中联系人后会直接退出控制器,现在不会调用了
+ */
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person
 {
-    // 1.获取选中联系人的姓名
+    // 获取选中联系人的姓名
     CFStringRef lastName = ABRecordCopyValue(person, kABPersonLastNameProperty);
     CFStringRef firstName = ABRecordCopyValue(person, kABPersonFirstNameProperty);
     
@@ -126,32 +125,23 @@
     
     NSLog(@"%@ %@", lastname, firstname);
     
-    // 2.获取选中联系人的电话号码
-    // 2.1.获取所有的电话号码
+    // 获取选中联系人的电话号码
     ABMultiValueRef phones = ABRecordCopyValue(person, kABPersonPhoneProperty);
     CFIndex phoneCount = ABMultiValueGetCount(phones);
-    
-    // 2.2.遍历拿到每一个电话号码
     for (int i = 0; i < phoneCount; i++) {
-        // 2.2.1.获取电话对应的key
         NSString *phoneLabel = (__bridge_transfer NSString *)ABMultiValueCopyLabelAtIndex(phones, i);
-        
-        // 2.2.2.获取电话号码
         NSString *phoneValue = (__bridge_transfer NSString *)ABMultiValueCopyValueAtIndex(phones, i);
-        
-        NSLog(@"%@ %@", phoneLabel, phoneValue);
+        NSLog(@"%@,%@",phoneLabel,phoneValue);
     }
     
-    // 注意:管理内存
     CFRelease(phones);
 }
 
-// 当用户选中某一个联系人的某一个属性时会执行该方法,并且选中属性后会退出控制器
+/**
+ *  当用户选中某一个联系人的某一个属性时会执行该方法,并且选中属性后会退出控制器
+ */
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier
 {
-//    NSLog(@"%s", __func__);
-//    NSLog(@"%@--%d---%d", person,property,identifier);
-    
     ABMultiValueRef phone = ABRecordCopyValue(person, kABPersonPhoneProperty);
     long index = ABMultiValueGetIndexForIdentifier(phone,identifier);
     NSString *phoneNO = (__bridge NSString *)ABMultiValueCopyValueAtIndex(phone, index >= 0 ? : 0);
@@ -162,8 +152,8 @@
     NSString *lastname = (__bridge_transfer NSString *)(lastName);
     NSString *firstname = (__bridge_transfer NSString *)(firstName);
     
-    NSLog(@"%@ %@", lastname, firstname);
-    NSLog(@"%@", phoneNO);
+    NSLog(@"选中用户 %@ %@", lastname, firstname);
+    NSLog(@"选中属性 %@", phoneNO);
     
     SXPersonInfoEntity *personEntity = [SXPersonInfoEntity new];
     personEntity.lastname = lastname;
