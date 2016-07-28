@@ -148,6 +148,14 @@
             CNPhoneNumber *phoneNumer = phoneObj.value;
             NSString *phoneValue = phoneNumer.stringValue;
             NSLog(@"选中联系人属性 %@",phoneValue);
+            SXPersonInfoEntity *personEntity = [SXPersonInfoEntity new];
+            personEntity.lastname = contactProperty.contact.familyName;
+            personEntity.firstname = contactProperty.contact.givenName;
+            NSMutableString *fullname = [[NSString stringWithFormat:@"%@ %@",personEntity.firstname,personEntity.lastname] mutableCopy];
+            [fullname replaceOccurrencesOfString:@"(null)" withString:@"" options:NSCaseInsensitiveSearch range:NSMakeRange(0, fullname.length)];
+            personEntity.fullname = fullname;
+            personEntity.phoneNumber = phoneValue;
+            self.chooseAction(personEntity);
             return true;
         }else{
             return false;
