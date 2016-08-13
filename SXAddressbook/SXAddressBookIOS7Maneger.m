@@ -128,7 +128,7 @@
 {
     ABMultiValueRef phone = ABRecordCopyValue(person, kABPersonPhoneProperty);
     long index = ABMultiValueGetIndexForIdentifier(phone,identifier);
-    NSString *phoneNO = (__bridge NSString *)ABMultiValueCopyValueAtIndex(phone, index >= 0 ? : 0);
+    NSString *phoneNO = (__bridge NSString *)ABMultiValueCopyValueAtIndex(phone, index >= 0 ? index: 0);
     
     CFStringRef lastName = ABRecordCopyValue(person, kABPersonLastNameProperty);
     CFStringRef firstName = ABRecordCopyValue(person, kABPersonFirstNameProperty);
