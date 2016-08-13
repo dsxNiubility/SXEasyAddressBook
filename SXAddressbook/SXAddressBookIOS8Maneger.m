@@ -42,9 +42,13 @@
     ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, NULL);
     ABAddressBookRequestAccessWithCompletion(addressBookRef, ^(bool granted, CFErrorRef error){
         if(granted){
-            success();
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success();
+            });
         }else{
-            failure();
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure();
+            });
         }
     });
 }

@@ -42,9 +42,13 @@
 {
     [[[CNContactStore alloc]init] requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
         if(granted){
-            success();
+            dispatch_async(dispatch_get_main_queue(), ^{
+                success();
+            });
         }else{
-            failure();
+            dispatch_async(dispatch_get_main_queue(), ^{
+                failure();
+            });
         }
     }];
 }
